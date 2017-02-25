@@ -41,14 +41,23 @@ The process for each stream hovers around 15% cpu on a HP DC7700 and about 10% o
 
 Refering to streamer.sh
 Line 1 updates the the time stamp on a file just to let me know that cron is doing its thing
+
 Line 2 more debug type stuff just to let me know things are running and when they stop
-Line 3 extracts only hardware id's (or card  No's)  from those lines output from aplay -l that contains the word USB. ie. If there are 4 USB audio devices it may return 0123 or 1234 or 0134 . The combination may vary after each reboot as it did for mor
-Line 4 Creates a for loop which iterates thru the card id's 
-Line 5 Gets the next hardware id 
-Line 6 Nulls out a
+
+Line 3 extracts only hardware id's (or card  No's)  from those lines output from aplay -l that contains the word USB. ie. If there are 4 USB audio devices it may return 0123 or 1234 or 0134 . The combination may vary after each reboot as it did for me
+
+Line 4 Creates a for loop which iterates thru the card id's
+
+Line 5 Gets the next hardware id
+
+Line 6 Nulls out $a
+
 Line 7 a becomes Not Null if there is already a stream running fro this hardware device
+
 Line 8 if not already streaming set up stream.  It took me av ery long time to work this line out.  Hope it saves someone else the pain
-Line 9 end of the if
+
+Line 9 end of the "if"
+
 Line 10 end of the for loop
 
 I am hopefully someone has a more elegant solution and if so would be great to hear from them
